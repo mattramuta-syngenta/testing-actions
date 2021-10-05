@@ -7,8 +7,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: auth-status
-        run: gh auth status
       - name: auth
         run: gh auth login
       - name: Get current date

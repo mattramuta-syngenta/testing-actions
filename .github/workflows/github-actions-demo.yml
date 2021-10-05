@@ -10,7 +10,7 @@ jobs:
       - name: auth-status
         run: gh auth status
       - name: auth
-        run: gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
+        run: gh auth login
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"

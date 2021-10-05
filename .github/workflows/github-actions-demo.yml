@@ -1,7 +1,5 @@
-on:
-  schedule:
-    - cron:  '*/6 * * * *'
-name: qa relase automation
+on: [push]
+name: create release
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -9,4 +7,4 @@ jobs:
       - name: get date
         id: date
         run: export TZ=America/Chicago && echo "::set-output name=date::$(date +'%Y-%m-%d-%H%M')"
-      - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release create qa/${{ steps.date.outputs.date }} --repo ${{ github.repository }}
+      - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release create ${{ steps.date.outputs.date }} --repo ${{ github.repository }}

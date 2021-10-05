@@ -10,7 +10,7 @@ jobs:
       # - run: ls
       - name: get date
         id: date
-        run: echo "::set-output name=TZ=America/Chicago date::$(date +'%Y-%m-%d-%H%M')"
+        run: TZ=America/Chicago echo "::set-output name=date::$(date +'%Y-%m-%d-%H%M')"
       - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release create qa/${{ steps.date.outputs.date }} --repo ${{ github.repository }}
       # - run: gh release create v-${{ steps.date.outputs.date }}
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"

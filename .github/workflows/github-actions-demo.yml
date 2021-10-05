@@ -7,7 +7,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: echo "${{ secrets.GITHUB_TOKEN }}"
         run: gh auth login
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"

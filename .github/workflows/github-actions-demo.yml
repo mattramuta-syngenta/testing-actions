@@ -7,12 +7,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-      - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release create v-${{ steps.date.outputs.date }}
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-      - run: gh release create v-${{ steps.date.outputs.date }}
+      - run: ls
+      # - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release create v-${{ steps.date.outputs.date }}
+      # - name: Get current date
+      #   id: date
+      #   run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      # - run: gh release create v-${{ steps.date.outputs.date }}
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       # - name: Check out repository code

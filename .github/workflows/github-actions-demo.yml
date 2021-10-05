@@ -7,7 +7,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ secrets.GITHUB_TOKEN }}"
+      - run: export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
       - run: gh auth login
       - name: Get current date
         id: date
